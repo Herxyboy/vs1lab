@@ -28,6 +28,9 @@ html {
   --background-color: #efefef;
   --border-color: #cdcdcd;
   --gray-color: #666;
+  --header-color: #1f3a5f;
+  --footer-color: #1f3a5f;
+  --result-color: #d9f1ff;
 }
 
 
@@ -44,9 +47,57 @@ a {
   color: var(--link-color);
 }
 
-/* ### TODO ### Styles for other HTML elements */
+h2 {
+  margin-bottom: 0.75rem;
+}
 
-/* ... your code here ... */
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+  color: var(--gray-color);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+input[readonly] {
+  background-color: var(--background-color);
+  color: var(--gray-color);
+}
+
+button {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--header-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--link-color);
+}
 
 
 /* Grid styles (no changes required) */
@@ -106,32 +157,80 @@ a {
   width: calc(100% - 1rem);
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--header-color);
+  color: #fff;
+}
 
-/* ### TODO ### Styles for Header Component */
+.header__image {
+  height: 3rem;
+}
 
-/* ... your code here ... */
+.header__title {
+  font-size: 1.8rem;
+}
 
-
-/* ### TODO ### Styles for Main Component */
-
-/* ... your code here ... */
-
-
-/* ### TODO ### Styles for Tagging component */
-
-/* ... your code here ... */
-
-
-/* ### TODO ### Styles for Discovery component */
-
-/* ... your code here ... */
-
-
-/* ### TODO ### Styles for Footer Component */
-
-/* ... your code here ... */
+.header__navigation {
+  margin-left: auto;
+}
 
 
-/* ### TODO ### Media Queries */
+.main {
+  padding: 1rem;
+}
 
-/* ... your code here ... */
+.discovery__results {
+  list-style: none;
+}
+
+.discovery__results li {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--result-color);
+  border-left: 5px solid var(--link-color);
+  border-radius: 4px;
+}
+
+.discovery__map img {
+  display: block;
+  width: 50%;
+  height: auto;
+  padding: 0.75rem;
+  background-color: var(--result-color);
+  border-radius: 4px;
+}
+
+.discovery__map span {
+  display: block;
+  margin-top: 0.25rem;
+  text-align: center;
+  color: var(--gray-color);
+}
+
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--footer-color);
+  color: #fff;
+}
+
+
+@media (max-width: 850px) {
+  .row {
+    flex-direction: column;
+  }
+
+  [class*="col-"] {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+}
