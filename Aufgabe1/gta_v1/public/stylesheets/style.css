@@ -118,6 +118,7 @@ a {
 .header__image {
   height: 40px;
   width: auto;
+  margin-left: 25px;
 }
 
 .header__title {
@@ -127,6 +128,7 @@ a {
 
 .header__navigation {
   font-size: 14px;
+  margin-right: 25px;
 }
 
 
