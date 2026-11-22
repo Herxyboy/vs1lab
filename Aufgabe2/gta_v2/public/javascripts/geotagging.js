@@ -139,9 +139,29 @@ class MapManager {
  * A function to retrieve the current location and update the page.
  * It is called once the page has been fully loaded.
  */
-// ... your code here ...
+function updateLocation(){
+    LocationHelper.findLocation(helper => {
+        let lat = helper.latitude;
+        let lon = helper.longitude;
+
+        document.getElementById("tag-latitude").value = lat;
+        document.getElementById("tag-longitude").value = lon;
+        document.getElementById("discovery-latitude").value = lat;
+        document.getElementById("discovery-longitude").value = lon;
+
+        console.log(lat, lon);
+
+        const mapManager = new MapManager();
+        mapManager.initMap(lat, lon);
+        mapManager.updateMarkers(lat, lon);
+
+        let mapElements = document.getElementById("map");
+        mapElements.getElementsByTagName("img")[0].remove();
+        mapElements.getElementsByTagName("p")[0].remove();
+    });
+}
 
 // Wait for the page to fully load its DOM content, then call updateLocation
 document.addEventListener("DOMContentLoaded", () => {
-    alert("Please change the script 'geotagging.js'");
+    updateLocation();
 });
