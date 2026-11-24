@@ -117,6 +117,7 @@ a {
 .header__image {
   height: 40px;
   width: auto;
+  margin-left: 25px;
 }
 
 .header__title {
@@ -126,6 +127,7 @@ a {
 
 .header__navigation {
   font-size: 14px;
+  margin-right: 25px;
 }
 
 
@@ -144,7 +146,7 @@ legend {
 }
 
 label {
-  display: inline;
+  display: block;
   margin-top: 10px;
   margin-bottom: 4px;
   color: #333;
@@ -153,7 +155,7 @@ label {
 input[type="text"] {
   display: inline;
   padding: 8px;
-  width: 35%;
+  width: 100%;
   font-size: 14px;
   border: 1px solid var(--border-color);
   border-radius: 2px;
@@ -250,19 +252,27 @@ input[readonly] {
 
 @media (max-width: 850px) {
 
-  #search_area {
-    width: 100%;
-  }
+.row {
+flex-direction: column;
+}
 
-  label {
-    display: block;
-  }
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+.col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+width: 100%;
+}
 
-  input[type="text"] {
+#search_area {
+width: 100%;
+}
 
-    width: 100%;
+label {
+display: block;
+}
 
-  }
+input[type="text"] {
+
+width: 100%;
+}
 
 }
 
